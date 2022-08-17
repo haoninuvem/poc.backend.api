@@ -11,6 +11,7 @@
 #     }
 #   }
 
+from typing import Optional
 from pydantic import Field, BaseModel
 
 class CandleDto(BaseModel):
@@ -21,4 +22,4 @@ class CandleDto(BaseModel):
     close: float = Field(description="Close price")
     volume: float = Field(description="Volume")
     timestamp: str = Field(description="Timestamp")
-    symbol: str = Field(description="Symbol")
+    symbol: Optional[str] = Field(default=None, description="Symbol")
